@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\PruebaWireUI;
 use Illuminate\Support\Facades\Route;
 
 /*
