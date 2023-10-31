@@ -45,15 +45,25 @@
     <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90" id="sidebarBackdrop"></div>
 
     <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
-      <main>
-        {{ $slot }}
-      </main>
-      <p class="my-10 text-sm text-center text-gray-500">
-        &copy; 2019-2023 <a href="https://flowbite.com/" class="hover:underline" target="_blank">Flowbite.com</a>. All
-        rights reserved.
-      </p>
-
-    </div>
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header class="bg-white dark:bg-gray-800 shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+        @endif
+        <main>
+            <div class="py-4">
+                <div class="mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-4 text-gray-900 dark:text-gray-100">
+                            {{ $slot }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
   </div>
 
@@ -64,7 +74,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/datepicker.min.js"></script>
 
    {{-- Livewire --}}
-   @livewireScripts
+    @livewireScripts
+    @livewireChartsScripts
 </body>
 
 </html>
